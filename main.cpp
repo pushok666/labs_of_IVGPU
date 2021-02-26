@@ -8,8 +8,8 @@ using namespace std;
 int main()
 {
     cout << "Hello World!\n";
-    lab_2();
-
+    lab1();
+    
     return 0;
 }
 

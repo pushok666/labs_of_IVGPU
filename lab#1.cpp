@@ -1,50 +1,58 @@
-#include <iostream>
-#include <cmath>
+#include<iostream>
+#include<cmath>
 
 using namespace std;
 
-void lab_2();
-void fun_2f(double,double,double,double);
-void fun_2exp(double, double, double, double, double);
+void sFun(double, double);
+void fiFun(double,double,double);
+double Factorial(double);
 
 
-
-void lab_2()
+void lab1()
 {
-    double a = 10.2;
-    double b = 9.2;
-    double x = 2.2;
-    double c = 0.5;
-    double f = 0;
-    double z = 0;
-    cout<< "lab #2 Sidorov P.V\n\n";
-
-    fun_2f(a,b,x,f);
-
-    fun_2exp(a, b, c, x, z);
-
-    cout << "enter your details: a, b, x, c" << endl;
-
-    cin >> a, b, x, c;
-
-    fun_2f(a, b, x, f);
-
-    fun_2exp(a, b, c, x, z);
-
-//cout « "enter your details: a, b, c, x" « endl;
-
-//cin » a, b, c, x;
-
-
+    
+    double x = 0.335;
+    double y = 0.025;
+    double s = 0;
+    double fi = 0;
+    cout<<"lab#1 Sidorov P.V."<<endl;
+    cout<<"the result of work on entered data"<<endl;
+    sFun(x,s);
+    fiFun(x,y,fi);
+    cout<<"enter your data "<<endl;
+    cin>>x,y,s,fi;
+    sFun(x,s);
+    fiFun(x,y,fi);
 }
 
-void fun_2f(double a, double b, double x, double f)
+double Factorial(double n)
 {
-    f = log10(a + pow(x, 2)) + pow(sin(x / b), 2);
-    cout << "f = " << f << endl;
+    
+    double factorial = 1;
+
+    if (n < 0)
+    {
+        cout << "Error! Factorial of a negative number doesn't exist."<<endl;
+    }
+        
+    else 
+    {
+        for(int i = 1; i <=n; ++i) 
+        {
+            factorial *= i;
+        }
+    
+    }
+    return factorial;
 }
-void fun_2exp(double a, double b, double c, double x, double z)
+
+void sFun(double x, double s)
 {
-    z = exp(c * x) * ((x + sqrt(x + a)) / (x - sqrt(abs(x - b))));
-    cout << "z = " << z << endl;
+    s = 1 + x + (pow( x,2)/Factorial(2))+(pow(x,3)/Factorial(3))+(pow(x,4)/Factorial(4));
+    cout<<"s = "<<s<<endl;
+}
+void fiFun(double x , double y, double fi)
+{
+    fi = x*(sin(pow(x,3)) + pow(cos(x),2));
+    cout<<"fi = "<<fi<<endl;
 }

@@ -15,7 +15,6 @@ void lab1()
     double y = 0.025;
     double s = 0;
     double fi = 0;
-    cout<<"lab#1 Sidorov P.V. ISTB11"<<endl;
     cout<<"the result of work on entered data"<<endl;
     sFun(x,s);
     fiFun(x,y,fi);
